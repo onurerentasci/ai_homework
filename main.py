@@ -144,7 +144,7 @@ inp_array = np.array(
 )
 
 # Tahmin butonu
-predict = col1.button("Tahmini Fiyat")
+predict = col2.button("Tahmini Fiyat")
 
 # Tahmin sonucunu göster
 if predict:
