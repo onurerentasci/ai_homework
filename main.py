@@ -66,7 +66,7 @@ def load_css():
     
     .prediction-result {
         background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-        padding: 2rem;
+        padding: 0.5rem;
         border-radius: 1rem;
         color: white;
         text-align: center;
@@ -109,7 +109,7 @@ def load_data():
     try:
         c = CurrencyConverter()
         currency = c.convert(1, "USD", "TRY")
-        car = pd.read_csv("Car_cleaned_with_Model.csv")
+        car = pd.read_csv("processedData/Car_cleaned_with_Model.csv")
         return c, currency, car
     except Exception as e:
         st.error(f"Veri yükleme hatası: {e}")
@@ -215,7 +215,7 @@ load_css()
 
 # Model yükleme
 with st.spinner("🚗 Model yükleniyor..."):
-    model_forest = model_loader("best_model_extra_trees.pkl")
+    model_forest = model_loader("random_forest.pkl")
 
 # Ana başlık
 st.markdown('<h1 class="header-title">🚗 AIrabam.com</h1>', unsafe_allow_html=True)
@@ -409,7 +409,7 @@ with tab3:
     Modern machine learning teknikleri kullanarak aracınızın piyasa değerini hesaplar.
     
     #### 🔧 Teknik Özellikler:
-    - **Algorithm:** Random Forest Regression
+    - **Algorithm:** Extra Trees Regression
     - **Framework:** Streamlit
     - **Visualization:** Plotly
     - **Data Processing:** Pandas, NumPy
@@ -434,6 +434,6 @@ with tab3:
 # Footer
 st.markdown("---")
 st.markdown(
-    '<p style="text-align: center; color: #6b7280; font-size: 0.9rem;">© 2024 AIrabam.com - Yapay Zeka Destekli Araç Değerlendirme Sistemi</p>', 
+    '<p style="text-align: center; color: #6b7280; font-size: 0.9rem;">© 2025 AIrabam.com - Yapay Zeka Destekli Araç Değerlendirme Sistemi</p>', 
     unsafe_allow_html=True
 )
